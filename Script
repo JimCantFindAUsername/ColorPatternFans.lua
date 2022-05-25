@@ -1,0 +1,293 @@
+local OnOff = script.Parent.Buttons.OnOff
+local SpeedPlus = script.Parent.Buttons.SpeedPlus
+local SpeedMinus = script.Parent.Buttons.SpeedMinus
+local ModePlus = script.Parent.Buttons.ModePlus
+local ModeMinus = script.Parent.Buttons.ModeMinus
+local Demo = script.Parent.Buttons.Demo
+local BrightnessUp = script.Parent.Buttons.BrightnessUp
+local BrightnessDown = script.Parent.Buttons.BrightnessDown
+
+local FanPlus = script.Parent.Buttons.FanPlus
+local FanMinus = script.Parent.Buttons.FanMinus
+
+local Red = script.Parent.Buttons.Red
+local Green = script.Parent.Buttons.Green
+local Blue = script.Parent.Buttons.Blue
+local Yellow = script.Parent.Buttons.Yellow
+local Orange = script.Parent.Buttons.Orange
+local Pink = script.Parent.Buttons.Pink
+local Purple = script.Parent.Buttons.Purple
+local White = script.Parent.Buttons.White
+
+local FANS = game.Workspace:WaitForChild("FANS")
+
+local RGB = FANS:WaitForChildren("RGB")
+
+
+
+
+function Clicked(OnOff)()
+     if OnOff.OnOffValue.Value == "On" then
+          
+          OnOff.OnOffValue.Value = "Off"
+          
+          RGB.Color = Color3.fromRGB(20, 20, 20)
+          
+          RGB.Material = Enum.Material.Plastic
+          
+     elseif OnOff.OnOffValue.Value == "Off"
+          
+          OnOff.OnOffValue.Value = "On"
+          
+          RGB.Color = script.CURRENTCOLOR
+          
+          RGB.Material = Enum.Material.Neon
+          
+     end
+end)
+
+function Clicked(SpeedPlus)()
+     script.ColorSpeed.Value = script.ColorSpeed.Value-.1
+end)
+
+function Clicked(SpeedMinus)()
+     script.ColorSpeed.Value = script.ColorSpeed.Value+.1
+end)
+
+function Clicked(ModePlus)()
+     script.Mode.Value = script.Mode.Value+1
+     
+     if script.Mode.Value == >12 then
+          script.Mode.Value = 1
+     end
+end)
+
+function Clicked(ModeMinus)()
+     script.Mode.Value = script.Mode.Value+1
+     
+     if script.Mode.Value == <0 then
+          script.Mode.Value = 10
+     end
+end)
+
+function Clicked(Demo)()
+     script.Mode.Value = script.Mode.Value = 1
+end)
+
+function Clicked(BrightnessUp)()
+     script.Brightness.Value = script.Brightness.Value+1
+     
+     RGB.Color = Color3.fromRGB(+10, +10, +10)
+end)
+
+function Clicked(BrightnessDown)()
+     script.Brightness.Value = script.Brightness.Value+1
+     
+     RGB.Color = Color3.fromRGB(-10, -10, -10)
+end)
+
+
+
+
+
+function Clicked(FanPlus)()
+     FANS.Fans.Velocity = FANS.Fans.Velocity+1
+end)
+
+function Clicked(FanMinus)()
+     FANS.Fans.Velocity = FANS.Fans.Velocity-1
+end)
+
+
+
+
+
+function Clicked(ColorRed)()
+     if OnOff.OnOffValue.Value == "On" then
+          RGB.Color = Color3.fromRGB(255, 0, 0)
+          script.Parent.Mode = 0
+     elseif OnOff.OnOffValue.Value == "Off" then
+          end
+     end
+end)
+
+function Clicked(ColorGreen)()
+     if OnOff.OnOffValue.Value == "On" then
+          RGB.Color = Color3.fromRGB(0, 255, 0)
+          script.Parent.Mode = 0
+     elseif OnOff.OnOffValue.Value == "Off" then
+          end
+     end
+end)
+
+function Clicked(ColorBlue)()
+     if OnOff.OnOffValue.Value == "On" then
+          RGB.Color = Color3.fromRGB(0, 0, 255)
+          script.Parent.Mode = 0
+     elseif OnOff.OnOffValue.Value == "Off" then
+          end
+     end
+end)
+
+function Clicked(ColorYellow)()
+     if OnOff.OnOffValue.Value == "On" then
+          RGB.Color = Color3.fromRGB(255, 255, 0)
+          script.Parent.Mode = 0
+     elseif OnOff.OnOffValue.Value == "Off" then
+          end
+     end
+end)
+
+function Clicked(ColorOrange)()
+     if OnOff.OnOffValue.Value == "On" then
+          RGB.Color = Color3.fromRGB(255, 100, 0)
+          script.Parent.Mode = 0
+     elseif OnOff.OnOffValue.Value == "Off" then
+          end
+     end
+end)
+
+function Clicked(ColorPink)()
+     if OnOff.OnOffValue.Value == "On" then
+          RGB.Color = Color3.fromRGB(255, 0, 100)
+          script.Parent.Mode = 0
+     elseif OnOff.OnOffValue.Value == "Off" then
+          end
+     end
+end)
+
+function Clicked(ColorPurple)()
+     if OnOff.OnOffValue.Value == "On" then
+          RGB.Color = Color3.fromRGB(100, 0, 255)
+          script.Parent.Mode = 0
+     elseif OnOff.OnOffValue.Value == "Off" then
+          end
+     end
+end)
+
+function Clicked(ColorWhite)
+     if OnOff.OnOffValue.Value == "On" then
+          RGB.Color = Color3.fromRGB(255, 255, 255)
+          script.Parent.Mode = 0
+     elseif OnOff.OnOffValue.Value == "Off" then
+          end
+     end
+end)
+
+while true do 
+     if script.Mode == 0 then
+          end
+     elseif script.Mode == 1 then
+          while true do 
+               RGB.Color = Red
+               wait(script.ColorSpeed.Value)
+               RGB.Color = Green
+               wait(script.ColorSpeed.Value)
+               RGB.Color = Blue
+               wait(script.ColorSpeed.Value)
+               RGB.Color = Orange
+               wait(script.ColorSpeed.Value)
+               RGB.Color = Yellow
+               wait(script.ColorSpeed.Value)
+               RGB.Color = Pink
+               wait(script.ColorSpeed.Value)
+               RGB.Color = White
+               
+               wait(script.ColorSpeed.Value)
+               
+               while until(wait(script.ColorSpeed.Value x 5)) do
+                    if RGB.Color == >255 then
+                         RGB.Color = RGB.Color+1
+                    elseif RGB.Color == 255
+                         RGB.Color = RGB.Color-1
+                    end
+               end
+               
+               RGB.Color = [ of(.05) do Position+0.05, Color = Color of(-0.05) -1, Color+0.1 
+          end
+     elseif script.Mode == 2 then
+          while true do
+               RGB.Color = [ of(.05) do Position+0.05 in RGB, Color = Color of(-0.05) -1, Color+0.1
+          end
+     elseif script.Mode == 3 then
+          while until(wait(script.ColorSpeed.Value x 5)) do
+               if RGB.Color == >255 then
+                    RGB.Color = RGB.Color+1
+               elseif RGB.Color == 255
+                    RGB.Color = RGB.Color-1
+               end
+          end
+     elseif script.Mode == 4 then
+          while true do
+               RGB.Color = Red
+               wait(script.ColorSpeed.Value)
+               RGB.Color = Green
+               wait(script.ColorSpeed.Value)
+               RGB.Color = Blue
+               wait(script.ColorSpeed.Value)
+               RGB.Color = Orange
+               wait(script.ColorSpeed.Value)
+               RGB.Color = Yellow
+               wait(script.ColorSpeed.Value)
+               RGB.Color = Pink
+               wait(script.ColorSpeed.Value)
+               RGB.Color = White
+          end
+     elseif script.Mode == 5
+          while true do
+               RGB.Color = [ of(.05) do Position+0.05 in RGB, Color = Color of(-0.05) -1, Color = White, BeforePosition.Color = Color3.fromRGB(20, 20, 20)
+          end
+     elseif script.Mode == 6
+          while true do
+               RGB.Color = [ of(.05) do Position+0.05 in RGB, Color = Color of(-0.05) -1, Color = Red, BeforePosition.Color = Color3.fromRGB(20, 20, 20)
+          end  
+     elseif script.Mode == 7
+          while true do
+               RGB.Color = [ of(.05) do Position+0.05 in RGB, Color = Color of(-0.05) -1, Color = Green, BeforePosition.Color = Color3.fromRGB(20, 20, 20)
+          end
+     elseif script.Mode == 8
+          while true do
+               RGB.Color = [ of(.05) do Position+0.05 in RGB, Color = Color of(-0.05) -1, Color = Blue, BeforePosition.Color = Color3.fromRGB(20, 20, 20)
+          end
+     elseif script.Mode == 9 
+          while true do
+               RGB.Color = [ of(.05) do Position+0.05 in RGB, Color = Color of(-0.05) -1, Color = Yellow, BeforePosition.Color = Color3.fromRGB(20, 20, 20)
+          end
+     elseif script.Mode == 10
+          while true do
+               RGB.Color = [ of(.05) do Position+0.05 in RGB, Color = Color of(-0.05) -1, Color = Orange, BeforePosition.Color = Color3.fromRGB(20, 20, 20)
+          end
+     elseif script.Mode == 11
+          while true do
+               RGB.Color = [ of(.05) do Position+0.05 in RGB, Color = Color of(-0.05) -1, Color = Purple, BeforePosition.Color = Color3.fromRGB(20, 20, 20)
+          end
+     elseif script.Mode == 12
+          while true do
+               RGB.Color = [ of(.05) do Position+0.05 in RGB, Color = Color of(-0.05) -1, Color = Pink, BeforePosition.Color = Color3.fromRGB(20, 20, 20)
+          end
+     end
+end
+
+
+
+
+script.Parent.Buttons.OnOff.Clicked:Connect(Clicked(OnOff))
+script.Parent.Buttons.SpeedPlus.Clicked:Connect(Clicked(SpeedPlus))
+script.Parent.Buttons.SpeedMinus.Clicked:Connect(Clicked(SpeedMinus))
+script.Parent.Buttons.ModePlus.Clicked:Connect(Clicked(ModePlus))
+script.Parent.Buttons.ModeMinus.Clicked:Connect(Clicked(ModeMinus))
+script.Parent.Buttons.Demo.Clicked:Connect(Clicked(Demo))
+script.Parent.Buttons.BrightnessUp.Clicked:Connect(Clicked(BrightnessUp))
+script.Parent.Buttons.BrightnessDown.Clicked:Connect(Clicked(BrightnessDown))
+
+script.Parent.Buttons.FanPlus.Clicked:Connect(Clicked(FanPlus))
+script.Parent.Buttons.FanMinus.Clicked:Connect(Clicked(FanMinus))
+
+script.Parent.Buttons.Red.Clicked:Connect(Clicked(ColorRed))
+script.Parent.Buttons.Green.Clicked:Connect(Clicked(ColorGreen))
+script.Parent.Buttons.Blue.Clicked:Connect(Clicked(ColorBlue))
+script.Parent.Buttons.Yellow.Clicked:Connect(Clicked(ColorYellow))
+script.Parent.Buttons.Orange.Clicked:Connect(Clicked(ColorOrange))
+script.Parent.Buttons.Pink.Clicked:Connect(Clicked(ColorPink))
+script.Parent.Buttons.Purple.Clicked:Connect(Clicked(ColorPurple))
+script.Parent.Buttons.White.Clicked:Connect(Clicked(ColorWhite))
